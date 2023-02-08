@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: #282A3A;
+    color:#fff;
+    font-family: poppins;
+}
+
+.colored{
+    color:#FB2576;
+}
+
+.active{
+    background-color: #FB2576 !important;
+}
+.navigation{
+    padding: 5px 100px;
+    border-bottom: 2px solid #31344A;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.block-1{
+    grid-column: 1/3;
+    grid-row:1/3;
+    display: grid;
+    gap:30px;
+    border-bottom: 2px solid #31344A;
+    border-right: 2px solid #31344A;
+    padding:30px 40px 40px 100px ;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.instrument{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: font-size 0.15s;
+    border-radius:10px;
+    user-select: none;
+    background-color: #31344A;
+    height: 100%;
+    width: 100%;
+}
+
+.instrument:active,.active-instrument{
+    outline:2px solid #FB2576;
+    color:#FB2576;
+    font-size:2rem;
+}
+
+
+
+.block-2,.block-3,.block-4,.block-5,.block-6{
+    border-bottom: 2px solid #31344A;
+}
+
+.block-4,.block-5{
+    border-right: 2px solid #31344A;
+}
+
+.block-2,.block-3,.block-4,.block-5,.block-6{
+    padding:30px 60px 60px;
+}
+
+.block-heading{
+    margin-bottom:20px;
+}
+
+.block-body{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap:10px 30px;
+    height: 100%;
+}
+
+.block-button{
+    display: block;
+    background-color: #31344A;
+    padding:5px;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size:0.8em;
+}
+
+.block-radio{
+    display: none;
+}

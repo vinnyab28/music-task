@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico"  />    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Drum Drum</title>
+  </head>
+
+  <body>
+    <nav class="navigation">
+        <h3 class="heading">Drum <span class="colored">Drum</span></h3>
+    </nav>
+
+    <section class="container">  
+        <div class="blocks block-1">
+            <div class="instrument" id="clap">Clap</div>
+            <div class="instrument" id="hats">Hats</div>
+            <div class="instrument" id="kick">Kick</div>
+            <div class="instrument" id="snare">Snare</div>
+            <div class="instrument" id="perc">Perc</div>
+            <div class="instrument" id="tron">Tron</div>
+        </div>
+        <div class="blocks block-2">
+            <div class="block-heading">
+                Perc
+            </div>
+            <form class="block-body" id="percform" onchange="percHandler(event)">
+                <div class="block-control">
+                    <label for="p1" class="block-button perc-button">P1</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-1" id="p1">
+                </div>
+                <div class="block-control">
+                    <label for="p2" class="block-button perc-button active">P2</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-2" id="p2">
+                </div>
+                <div class="block-control">
+                    <label for="p3" class="block-button perc-button">P3</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-3" id="p3">
+                </div>
+                <div class="block-control">
+                    <label for="p4" class="block-button perc-button">P4</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-4" id="p4">
+                </div>
+                <div class="block-control">
+                    <label for="p5" class="block-button perc-button"> P5</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-5" id="p5">
+                </div>
+                <div class="block-control">
+                    <label for="p6" class="block-button perc-button">P6</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-6" id="p6">
+                </div>
+                <div class="block-control">
+                    <label for="p7" class="block-button perc-button">P7</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-7" id="p7">
+                </div>
+                <div class="block-control">
+                    <label for="p8" class="block-button perc-button">P8</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-8" id="p8">
+                </div>
+                <div class="block-control">
+                    <label for="p9" class="block-button perc-button">P9</label>
+                    <input type="radio" class="block-radio" name="perc" value="perc-9" id="p9">
+                </div>
+
+            </form>
+        </div>
+        <div class="blocks block-3">
+            <div class="block-heading">
+                Snare
+            </div>
+            <form class="block-body" id="snareform" onchange="snareHandler(event)">
+                <div class="block-control">
+                    <label for="s1" class="block-button snare-button">S1</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-1" id="s1">
+                </div>
+                <div class="block-control">
+                    <label for="s2" class="block-button snare-button">S2</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-2" id="s2">
+                </div>
+                <div class="block-control">
+                    <label for="s3" class="block-button snare-button">S3</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-3" id="s3">
+                </div>
+                <div class="block-control">
+                    <label for="s4" class="block-button snare-button">S4</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-4" id="s4">
+                </div>
+                <div class="block-control">
+                    <label for="s5" class="block-button snare-button active"> S5</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-5" id="s5">
+                </div>
+                <div class="block-control">
+                    <label for="s6" class="block-button snare-button">S6</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-6" id="s6">
+                </div>
+                <div class="block-control">
+                    <label for="s7" class="block-button snare-button">S7</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-7" id="s7">
+                </div>
+                <div class="block-control">
+                    <label for="s8" class="block-button snare-button">S8</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-8" id="s8">
+                </div>
+                <div class="block-control">
+                    <label for="s9" class="block-button snare-button">S9</label>
+                    <input type="radio" class="block-radio" name="snare" value="snare-9" id="s9">
+                </div>
+
+            </form>
+        </div>
+        <div class="blocks block-4">
+            <div class="block-heading">
+                Clap
+            </div>
+            <form class="block-body" id="clapform" onchange="clapHandler(event)">
+                <div class="block-control">
+                    <label for="c1" class="block-button clap-button">C1</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-1" id="c1">
+                </div>
+                <div class="block-control">
+                    <label for="c2" class="block-button clap-button">C2</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-2" id="c2">
+                </div>
+                <div class="block-control">
+                    <label for="c3" class="block-button clap-button">C3</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-3" id="c3">
+                </div>
+                <div class="block-control">
+                    <label for="c4" class="block-button clap-button">C4</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-4" id="c4">
+                </div>
+                <div class="block-control">
+                    <label for="c5" class="block-button clap-button"> C5</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-5" id="c5">
+                </div>
+                <div class="block-control">
+                    <label for="c6" class="block-button clap-button">C6</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-6" id="c6">
+                </div>
+                <div class="block-control">
+                    <label for="c7" class="block-button clap-button active">C7</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-7" id="c7">
+                </div>
+                <div class="block-control">
+                    <label for="c8" class="block-button clap-button">C8</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-8" id="c8">
+                </div>
+                <div class="block-control">
+                    <label for="c9" class="block-button clap-button">C9</label>
+                    <input type="radio" class="block-radio" name="clap" value="clap-9" id="c9">
+                </div>
+
+            </form>
+        </div>
+        <div class="blocks block-5">
+            <div class="block-heading">
+                Hats
+            </div>
+            <form class="block-body" id="hatsform" onchange="hatsHandler(event)">
+                <div class="block-control">
+                    <label for="h1" class="block-button hats-button">H1</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-1" id="h1">
+                </div>
+                <div class="block-control">
+                    <label for="h2" class="block-button hats-button">H2</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-2" id="h2">
+                </div>
+                <div class="block-control">
+                    <label for="h3" class="block-button hats-button">H3</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-3" id="h3">
+                </div>
+                <div class="block-control">
+                    <label for="h4" class="block-button hats-button active">H4</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-4" id="h4">
+                </div>
+                <div class="block-control">
+                    <label for="h5" class="block-button hats-button"> H5</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-5" id="h5">
+                </div>
+                <div class="block-control">
+                    <label for="h6" class="block-button hats-button">H6</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-6" id="h6">
+                </div>
+                <div class="block-control">
+                    <label for="h7" class="block-button hats-button">H7</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-7" id="h7">
+                </div>
+                <div class="block-control">
+                    <label for="h8" class="block-button hats-button">H8</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-8" id="h8">
+                </div>
+                <div class="block-control">
+                    <label for="h9" class="block-button hats-button">H9</label>
+                    <input type="radio" class="block-radio" name="hats" value="hats-9" id="h9">
+                </div>
+
+            </form>
+        </div>
+        <div class="blocks block-6">
+            <div class="block-heading">
+                Kick
+            </div>
+            <form class="block-body" id="kickform" onchange="kickHandler(event)">
+                <div class="block-control">
+                    <label for="k1" class="block-button kick-button">K1</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-1" id="k1">
+                </div>
+                <div class="block-control">
+                    <label for="k2" class="block-button kick-button">K2</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-2" id="k2">
+                </div>
+                <div class="block-control">
+                    <label for="k3" class="block-button kick-button active">K3</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-3" id="k3">
+                </div>
+                <div class="block-control">
+                    <label for="k4" class="block-button kick-button">K4</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-4" id="k4">
+                </div>
+                <div class="block-control">
+                    <label for="k5" class="block-button kick-button"> K5</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-5" id="k5">
+                </div>
+                <div class="block-control">
+                    <label for="k6" class="block-button kick-button">K6</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-6" id="k6">
+                </div>
+                <div class="block-control">
+                    <label for="k7" class="block-button kick-button">K7</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-7" id="k7">
+                </div>
+                <div class="block-control">
+                    <label for="k8" class="block-button kick-button">K8</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-8" id="k8">
+                </div>
+                <div class="block-control">
+                    <label for="k9" class="block-button kick-button">K9</label>
+                    <input type="radio" class="block-radio" name="kick" value="kick-9" id="k9">
+                </div>
+
+            </form>
+        </div>
+    </section>
+  </body>
+<script src="./index.js"></script>
+</html>
