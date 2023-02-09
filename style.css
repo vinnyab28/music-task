@@ -16,9 +16,42 @@ body{
 .active{
     background-color: #FB2576 !important;
 }
+
 .navigation{
     padding:5px 30px;
     border-bottom: 2px solid #31344A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-form{
+    display: flex;
+}
+
+#song-select{
+    border-radius: 5px;
+    background-color: #31344A;
+    border:none;
+    outline: none;
+    padding:10px 20px;
+    color:white;
+    margin-right: 20px;
+}
+
+.play-button{
+    background-color: #FB2576;
+    padding:9px 15px;
+    border-radius: 5px;
+}
+
+.play-button img{
+    width:15px;
+    border-radius: 5px;
+}
+
+#song-select:focus{
+    outline: 1px solid #FB2576;
 }
 
 .container{
