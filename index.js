@@ -155,8 +155,19 @@ const song4 = ['s', 'a', 'c', 'z', 'a', 'd']
 
 instruments = [clap,hats,kick,snare,perc,tron]
 var interval;
+var paused = true;
 document.querySelector('.select-form').addEventListener('submit', async function (e) {
+    console.log(paused)
     e.preventDefault()
+    if(!paused){
+        document.querySelector('.play-button img').src = 'play.png'
+        paused = true
+        clearInterval(interval)
+        return
+    }else{
+        document.querySelector('.play-button img').src = 'pause.png'
+    }
+    paused = !paused
     if(interval) clearInterval(interval)
 
     var song = document.querySelector('#song-select').value
