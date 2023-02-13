@@ -75,6 +75,7 @@ const clapHandler = (e) => {
     var form = new FormData(document.getElementById("clapform"));
     var clapValue = form.get("clap");
     currentClap = clapValue
+    clap.click();
 }
 const snareHandler = (e) => {
     document.querySelectorAll('.snare-button').forEach(function (button) {
@@ -84,6 +85,7 @@ const snareHandler = (e) => {
     var form = new FormData(document.getElementById("snareform"));
     var snareValue = form.get("snare");
     currentSnare = snareValue
+    snare.click();
 }
 
 const kickHandler = (e) => {
@@ -94,6 +96,7 @@ const kickHandler = (e) => {
     var form = new FormData(document.getElementById("kickform"));
     var kickValue = form.get("kick");
     currentKick = kickValue
+    kick.click();
 }
 
 const percHandler = (e) => {
@@ -104,6 +107,7 @@ const percHandler = (e) => {
     var form = new FormData(document.getElementById("percform"));
     var percValue = form.get("perc");
     currentPerc = percValue
+    perc.click();
 }
 
 const hatsHandler = (e) => {
@@ -114,6 +118,7 @@ const hatsHandler = (e) => {
     var form = new FormData(document.getElementById("hatsform"));
     var hatsValue = form.get("hats");
     currentHats = hatsValue
+    hats.click();
 }
 
 document.onkeyup = function (e) {
