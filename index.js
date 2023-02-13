@@ -1,29 +1,49 @@
+const clap = document.getElementById('clap')
+const hats = document.getElementById('hats')
+const kick = document.getElementById('kick')
+const snare = document.getElementById('snare')
+const perc = document.getElementById('perc')
+const tron = document.getElementById('tron')
+
 const playSound = (path) => {
     const sound = new Audio(path)
     sound.play()
 }
 
+const makeActive = (selector) =>{
+    selector.classList.add('active-instrument')
+    setTimeout(() => {
+       selector.classList.remove('active-instrument')
+    }, 100);
+}
+
 const playClapSound = () => {
+    makeActive(clap)
     const sound = new Audio('./drums/' + currentClap + '.wav')
     sound.play()
 }
 const playHatsSound = () => {
+    makeActive(hats)
     const sound = new Audio('./drums/' + currentHats + '.wav')
     sound.play()
 }
 const playKickSound = () => {
+    makeActive(kick)
     const sound = new Audio('./drums/' + currentKick + '.wav')
     sound.play()
 }
 const playSnareSound = () => {
+    makeActive(snare)
     const sound = new Audio('./drums/' + currentSnare + '.wav')
     sound.play()
 }
 const playPercSound = () => {
+    makeActive(perc)
     const sound = new Audio('./drums/' + currentPerc + '.wav')
     sound.play()
 }
 const playTronSound = () => {
+    makeActive(tron)
     const sound = new Audio('./drums/tron.wav')
     sound.play()
 }
@@ -33,13 +53,6 @@ const addClickEvent = (selector, callback) => {
         callback()
     })
 }
-
-const clap = document.getElementById('clap')
-const hats = document.getElementById('hats')
-const kick = document.getElementById('kick')
-const snare = document.getElementById('snare')
-const perc = document.getElementById('perc')
-const tron = document.getElementById('tron')
 
 currentClap = 'clap-7';
 currentHats = 'hats-4';
@@ -106,45 +119,28 @@ const hatsHandler = (e) => {
 document.onkeyup = function (e) {
     if (e.key == 'a' || e.key == 'A') {
         clap.click();
-        clap.classList.add('active-instrument')
-        setTimeout(() => {
-            clap.classList.remove('active-instrument')
-        }, 100);
+        makeActive(clap)
     }
     else if (e.key == 's' || e.key == 'S') {
         hats.click();
-        hats.classList.add('active-instrument')
-        setTimeout(() => {
-            hats.classList.remove('active-instrument')
-        }, 100);
+        makeActive(hats)
+
     }
     else if (e.key == 'd' || e.key == 'D') {
         kick.click();
-        kick.classList.add('active-instrument')
-        setTimeout(() => {
-            kick.classList.remove('active-instrument')
-        }, 100);
+        makeActive(kick)
     }
     else if (e.key == 'z' || e.key == 'Z') {
         snare.click();
-        snare.classList.add('active-instrument')
-        setTimeout(() => {
-            snare.classList.remove('active-instrument')
-        }, 100);
+        makeActive(snare)
     }
     else if (e.key == 'x' || e.key == 'X') {
         perc.click();
-        perc.classList.add('active-instrument')
-        setTimeout(() => {
-            perc.classList.remove('active-instrument')
-        }, 100);
+        makeActive(perc)
     }
     else if (e.key == 'c' || e.key == 'C') {
         tron.click();
-        tron.classList.add('active-instrument')
-        setTimeout(() => {
-            tron.classList.remove('active-instrument')
-        }, 100);
+        makeActive(tron)
     }
 };
 
@@ -157,7 +153,6 @@ instruments = [clap,hats,kick,snare,perc,tron]
 var interval;
 var paused = true;
 document.querySelector('.select-form').addEventListener('submit', async function (e) {
-    console.log(paused)
     e.preventDefault()
     if(!paused){
         document.querySelector('.play-button img').src = 'play.png'
@@ -211,3 +206,33 @@ document.querySelector('.select-form').addEventListener('submit', async function
     },500)
 
 })
+
+const clapConfig = (e)=>{
+    e.stopImmediatePropagation();
+    let myModal = new bootstrap.Modal(document.getElementById('clapModal'), {});
+    myModal.show();
+}
+
+const snareConfig = (e)=>{
+    e.stopImmediatePropagation();
+    let myModal = new bootstrap.Modal(document.getElementById('snareModal'), {});
+    myModal.show();
+}
+
+const kickConfig = (e)=>{
+    e.stopImmediatePropagation();
+    let myModal = new bootstrap.Modal(document.getElementById('kickModal'), {});
+    myModal.show();
+}
+
+const percConfig = (e)=>{
+    e.stopImmediatePropagation();
+    let myModal = new bootstrap.Modal(document.getElementById('percModal'), {});
+    myModal.show();
+}
+
+const hatsConfig = (e)=>{
+    e.stopImmediatePropagation();
+    let myModal = new bootstrap.Modal(document.getElementById('hatsModal'), {});
+    myModal.show();
+}
